@@ -22,33 +22,53 @@ Make sure you have the following installed:
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/air-pollution-analyzer.git
+   ```
+   git clone https://github.com/praneethdatta/AirPollutionAnalyzer.git
+   ```
 
 2. Change to the project directory:
 
-  ```bash
+   ```
    cd air-pollution-analyzer
+   ```
 
 3. Install dependencies:
 
-  ```bash
+   ```
    bundle install
+   ```
 
 4. Set up the database:
 
-  ```bash
+   ```
    rails db:create
    rails db:migrate
+   ```
 
 5. Set up environment variables:
 
-  Create a .env file in the project root and add the following:
-  ```bash
+     Create a .env file in the project root and add the following:
+   ```
     OPENWEATHERMAP_API_KEY=your_openweathermap_api_key
-  Replace your_openweathermap_api_key with your actual OpenWeatherMap API key.
+   ```
+     Replace your_openweathermap_api_key with your actual OpenWeatherMap API key.
 
-6. Update geocoding information:
 
-  ```bash
-   rails geocode:update_all
+
+6. Add Location information:
+
+   ```
+   rails fetch_locations:execute
+   ```
+      This will add records in the _Location_ table
+   
+
+
+8. Populate the AirPollutionData 
+
+   ```
+    bundle exec sidekiq 
+   ```
+      Start the _sidekiq_ server. This will create/update the _AirPollutionData_ data periodically
+
+
