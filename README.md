@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Air Pollution Analyzer is a web application that provides information about air quality at different locations. It fetches air pollution data from OpenWeatherMap API and allows users to view and analyze air quality information.
+Air Pollution Analyzer is a web application that provides information about air quality in different Indian cities. It fetches air pollution data from OpenWeatherMap API and allows users to view and analyze air quality information.
 
 ## Getting Started
 
@@ -69,6 +69,6 @@ Make sure you have the following installed:
    ```
     bundle exec sidekiq 
    ```
-      Start the _sidekiq_ server. This will create/update the _AirPollutionData_ data periodically
+      Start the _sidekiq_ server. This will create/update the _AirPollutionData_ data periodically. Make sure redis is running in the background
 
 
